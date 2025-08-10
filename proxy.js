@@ -17,7 +17,8 @@ const PORT = 3000;
         }
 
         try {
-            const response = await fetch(`https://apis.roblox.com/game-passes/v1/users/${userId}/game-passes`);
+            // Use RoProxy instead of Roblox API
+            const response = await fetch(`https://games.roproxy.com/v1/users/${userId}/game-passes`);
             if (!response.ok) {
                 return res.status(response.status).json({ error: "Failed to fetch gamepasses" });
             }
